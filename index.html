@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link href='./css/style.css' rel='stylesheet'>
+  <script type="text/javascript" src="scripts/mp-calc.js" defer></script>
+  <title>TomeNET HP Calculator</title>
+</head>
+<body>
+  <div id="all-inputs">
+    <div id="inputs-row-one">
+      A
+      <label for="playerLevel">level</label>
+      <input type="text" id="playerLevel" name="playerLevel" value="1">
+      <select name="playerClass" id="playerClass">
+        <option value="istar">Istar</option>
+        <option value="priest">Priest</option>
+        <option value="rogue">Rogue</option>
+        <option value="mimic">Mimic</option>
+        <option value="paladin">Paladin</option>
+        <option value="ranger">Ranger</option>
+        <option value="adventurer">Adventurer</option>
+        <option value="druid">Druid</option>
+        <option value="shaman">Shaman</option>
+        <option value="runemaster">Runemaster</option>
+        <option value="mindcrafter">Mindcrafter</option>
+        <option value="death-knight">Death Knight</option>
+        <option value="hell-knight">Hell Knight</option>
+      </select>
+      with
+    </div>
+    <div id="dex-score-input-row" hidden="">
+      a Dexterity score of
+      <select name="dexScore" id="dexScore">
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+        <option value="six">6</option>
+        <option value="seven">7</option>
+        <option value="eight">8</option>
+        <option value="nine">9</option>
+        <option value="ten" selected="selected">10</option>
+        <option value="eleven">11</option>
+        <option value="twelve">12</option>
+        <option value="thirteen">13</option>
+        <option value="fourteen">14</option>
+        <option value="fifteen">15</option>
+        <option value="sixteen">16</option>
+        <option value="seventeen">17</option>
+        <option value="eighteen">18</option>
+        <option value="eighteen-ten">18/10</option>
+        <option value="eighteen-twenty">18/20</option>
+        <option value="eighteen-thirty">18/30</option>
+        <option value="eighteen-forty">18/40</option>
+        <option value="eighteen-fifty">18/50</option>
+        <option value="eighteen-sixty">18/60</option>
+        <option value="eighteen-seventy">18/70</option>
+        <option value="eighteen-eighty">18/80</option>
+        <option value="eighteen-ninety">18/90</option>
+        <option value="eighteen-one-hundred">18/100</option>
+        <option value="eighteen-one-hundred-ten">18/110</option>
+        <option value="eighteen-one-hundred-twenty">18/120</option>
+        <option value="eighteen-one-hundred-thirty">18/130</option>
+        <option value="eighteen-one-hundred-forty">18/140</option>
+        <option value="eighteen-one-hundred-fifty">18/150</option>
+        <option value="eighteen-one-hundred-sixty">18/160</option>
+        <option value="eighteen-one-hundred-seventy">18/170</option>
+        <option value="eighteen-one-hundred-eighty">18/180</option>
+        <option value="eighteen-one-hundred-ninety">18/190</option>
+        <option value="eighteen-two-hundred">18/200</option>
+        <option value="eighteen-two-hundred-ten">18/210</option>
+        <option value="eighteen-two-hundred-twenty">18/220</option>
+      </select>,
+    </div>
+    <div id="int-score-input-row">
+      an Intelligence score of
+      <select name="intScore" id="intScore">
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+        <option value="six">6</option>
+        <option value="seven">7</option>
+        <option value="eight">8</option>
+        <option value="nine">9</option>
+        <option value="ten" selected="selected">10</option>
+        <option value="eleven">11</option>
+        <option value="twelve">12</option>
+        <option value="thirteen">13</option>
+        <option value="fourteen">14</option>
+        <option value="fifteen">15</option>
+        <option value="sixteen">16</option>
+        <option value="seventeen">17</option>
+        <option value="eighteen">18</option>
+        <option value="eighteen-ten">18/10</option>
+        <option value="eighteen-twenty">18/20</option>
+        <option value="eighteen-thirty">18/30</option>
+        <option value="eighteen-forty">18/40</option>
+        <option value="eighteen-fifty">18/50</option>
+        <option value="eighteen-sixty">18/60</option>
+        <option value="eighteen-seventy">18/70</option>
+        <option value="eighteen-eighty">18/80</option>
+        <option value="eighteen-ninety">18/90</option>
+        <option value="eighteen-one-hundred">18/100</option>
+        <option value="eighteen-one-hundred-ten">18/110</option>
+        <option value="eighteen-one-hundred-twenty">18/120</option>
+        <option value="eighteen-one-hundred-thirty">18/130</option>
+        <option value="eighteen-one-hundred-forty">18/140</option>
+        <option value="eighteen-one-hundred-fifty">18/150</option>
+        <option value="eighteen-one-hundred-sixty">18/160</option>
+        <option value="eighteen-one-hundred-seventy">18/170</option>
+        <option value="eighteen-one-hundred-eighty">18/180</option>
+        <option value="eighteen-one-hundred-ninety">18/190</option>
+        <option value="eighteen-two-hundred">18/200</option>
+        <option value="eighteen-two-hundred-ten">18/210</option>
+        <option value="eighteen-two-hundred-twenty">18/220</option>
+      </select>,
+    </div>
+    <div id="wis-score-input-row">
+      a Wisdom score of
+      <select name="wisScore" id="wisScore">
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+        <option value="six">6</option>
+        <option value="seven">7</option>
+        <option value="eight">8</option>
+        <option value="nine">9</option>
+        <option value="ten" selected="selected">10</option>
+        <option value="eleven">11</option>
+        <option value="twelve">12</option>
+        <option value="thirteen">13</option>
+        <option value="fourteen">14</option>
+        <option value="fifteen">15</option>
+        <option value="sixteen">16</option>
+        <option value="seventeen">17</option>
+        <option value="eighteen">18</option>
+        <option value="eighteen-ten">18/10</option>
+        <option value="eighteen-twenty">18/20</option>
+        <option value="eighteen-thirty">18/30</option>
+        <option value="eighteen-forty">18/40</option>
+        <option value="eighteen-fifty">18/50</option>
+        <option value="eighteen-sixty">18/60</option>
+        <option value="eighteen-seventy">18/70</option>
+        <option value="eighteen-eighty">18/80</option>
+        <option value="eighteen-ninety">18/90</option>
+        <option value="eighteen-one-hundred">18/100</option>
+        <option value="eighteen-one-hundred-ten">18/110</option>
+        <option value="eighteen-one-hundred-twenty">18/120</option>
+        <option value="eighteen-one-hundred-thirty">18/130</option>
+        <option value="eighteen-one-hundred-forty">18/140</option>
+        <option value="eighteen-one-hundred-fifty">18/150</option>
+        <option value="eighteen-one-hundred-sixty">18/160</option>
+        <option value="eighteen-one-hundred-seventy">18/170</option>
+        <option value="eighteen-one-hundred-eighty">18/180</option>
+        <option value="eighteen-one-hundred-ninety">18/190</option>
+        <option value="eighteen-two-hundred">18/200</option>
+        <option value="eighteen-two-hundred-ten">18/210</option>
+        <option value="eighteen-two-hundred-twenty">18/220</option>
+      </select>,
+    </div>
+    <div id="cha-score-input-row" hidden="">
+      a Charisma score of
+      <select name="chaScore" id="chaScore">
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+        <option value="six">6</option>
+        <option value="seven">7</option>
+        <option value="eight">8</option>
+        <option value="nine">9</option>
+        <option value="ten" selected="selected">10</option>
+        <option value="eleven">11</option>
+        <option value="twelve">12</option>
+        <option value="thirteen">13</option>
+        <option value="fourteen">14</option>
+        <option value="fifteen">15</option>
+        <option value="sixteen">16</option>
+        <option value="seventeen">17</option>
+        <option value="eighteen">18</option>
+        <option value="eighteen-ten">18/10</option>
+        <option value="eighteen-twenty">18/20</option>
+        <option value="eighteen-thirty">18/30</option>
+        <option value="eighteen-forty">18/40</option>
+        <option value="eighteen-fifty">18/50</option>
+        <option value="eighteen-sixty">18/60</option>
+        <option value="eighteen-seventy">18/70</option>
+        <option value="eighteen-eighty">18/80</option>
+        <option value="eighteen-ninety">18/90</option>
+        <option value="eighteen-one-hundred">18/100</option>
+        <option value="eighteen-one-hundred-ten">18/110</option>
+        <option value="eighteen-one-hundred-twenty">18/120</option>
+        <option value="eighteen-one-hundred-thirty">18/130</option>
+        <option value="eighteen-one-hundred-forty">18/140</option>
+        <option value="eighteen-one-hundred-fifty">18/150</option>
+        <option value="eighteen-one-hundred-sixty">18/160</option>
+        <option value="eighteen-one-hundred-seventy">18/170</option>
+        <option value="eighteen-one-hundred-eighty">18/180</option>
+        <option value="eighteen-one-hundred-ninety">18/190</option>
+        <option value="eighteen-two-hundred">18/200</option>
+        <option value="eighteen-two-hundred-ten">18/210</option>
+        <option value="eighteen-two-hundred-twenty">18/220</option>
+      </select>,
+    </div>
+    <div>
+      <span id="magic-skill-input"><label for="magicSkill">a Magic skill of</label>
+      <input type="text" id="magicSkill" name="magicSkill" value="0">,</span>
+      <span id="mimicry-skill-input" hidden=""><label for="mimicrySkill">a Mimicry skill of</label>
+      <input type="text" id="mimicrySkill" name="mimicrySkill" value="0">,</span>
+    </div>
+    <div>
+      and
+      <input type="text" id="plusMP" name="plusMP" value="0">
+      <label for="plusMP">points of +MP from equipped items would have</label>
+    </div>
+    <div id="mana-points-output" class="output">
+      ???
+    </div>
+    <div>
+      mana points.
+    </div>
+    <div id="mimicry-output-section" hidden="">
+      <div>
+        If they took the form of a
+        <select name="priestLike" id="priestLike">
+          <option value="priest-like">priest-like</option>
+          <option value="non-priest-like" selected="selected">non-priest-like</option>
+        </select>
+        monster capable of casting spells every
+        <input type="text" id="mimicCastRate" name="mimicCastRate" value="4">
+        turns, they would have
+      </div>
+      <div id="mimic-mana-points-output" class="output">
+        ???
+      </div>
+      <div>
+        mana points.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
