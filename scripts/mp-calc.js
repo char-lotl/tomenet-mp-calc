@@ -12,6 +12,8 @@ const statInputs = [dexInput, intInput, wisInput, chaInput];
 
 const mimicrySkillInput = document.querySelector('#mimicry-skill-input');
 
+const hpCalcLink = document.querySelector('#hp-calc-link');
+
 const [DEX, INT, WIS, CHA] = [0, 1, 2, 3];
 
 const profile = {
@@ -272,4 +274,8 @@ allInputs.addEventListener('input', e => {
     }
   }
   updateOutput();
+});
+
+hpCalcLink.addEventListener('click', e => {
+  window.location = '../tomenet-hp-calc/index.html';
 });
