@@ -4,7 +4,7 @@
 }
 
 #all-inputs {
-	margin-top: 5em;
+	margin-top: 3em;
 }
 
 #all-inputs > div {
@@ -39,3 +39,12 @@ input[invalid] {
 	margin: 0.5em;
 	user-select: none;
 }
+
+h1 {
+	text-align: center;
+	margin-top: 2em;
+}
+
+
+
+
