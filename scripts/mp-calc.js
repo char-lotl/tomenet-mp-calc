@@ -111,8 +111,8 @@ const statNameParser = {
 
 const patternSelector = {
   "playerLevel": /^[1-9][0-9]?$/,
-  "magicSkill": /^([1-4]?\d(.\d\d?\d?)?|50(.00?0?)?)$/,
-  "mimicrySkill": /^([1-4]?\d(.\d\d?\d?)?|50(.00?0?)?)$/,
+  "magicSkill": /^([1-4]?\d(\.\d\d?\d?)?|50(.00?0?)?)$/,
+  "mimicrySkill": /^([1-4]?\d(\.\d\d?\d?)?|50(.00?0?)?)$/,
   "plusMP": /^-?(1?[0-9]|2[0-5])$/,
   "mimicCastRate": /^([1-9]|1[0125])$/
 };
