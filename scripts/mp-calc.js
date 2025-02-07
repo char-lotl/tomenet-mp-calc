@@ -275,7 +275,3 @@ allInputs.addEventListener('input', e => {
   }
   updateOutput();
 });
-
-hpCalcLink.addEventListener('click', e => {
-  window.location = '../tomenet-hp-calc/index.html';
-});
