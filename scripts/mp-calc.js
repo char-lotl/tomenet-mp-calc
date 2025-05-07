@@ -1,3 +1,4 @@
+// Assigning names to DOM objects corresponding to key page elements.
 const allInputs = document.querySelector('#all-inputs');
 
 const manapointsOutput = document.querySelector('#mana-points-output');
@@ -16,6 +17,7 @@ const hpCalcLink = document.querySelector('#hp-calc-link');
 
 const [DEX, INT, WIS, CHA] = [0, 1, 2, 3];
 
+// Default character profile values.
 const profile = {
   playerLevel: 1,
   playerClass: "istar",
@@ -34,6 +36,7 @@ const profile = {
   mimicSpellSpeedPlusStats: 0
 };
 
+// Pairs character classes with their MP computation data.
 const classParser = {
   "istar": [0, 85, 15, 0, 3000, 100, false],
   "priest": [0, 15, 85, 0, 3750, 130, false],
@@ -50,6 +53,7 @@ const classParser = {
   "hell-knight": [0, 15, 85, 0, 5000, 150, false]
 };
 
+// Relates character Intelligence values with MP bonuses.
 const adjMagMana = [
   0, 0, 0, 0, 0, 1, 2, 2, 2, 2,
   2, 2, 2, 2, 2, 3, 3, 3, 3, 3,
@@ -102,6 +106,7 @@ const statParser = {
   "eighteen-two-hundred-twenty": 40
 };
 
+// Pairs HTML select elements for stats with their stat constant.
 const statNameParser = {
   "dexScore": DEX,
   "intScore": INT,
@@ -109,18 +114,22 @@ const statNameParser = {
   "chaScore": CHA
 };
 
+// Associates entry fields with their corresponding validation regexes.
 const patternSelector = {
-  "playerLevel": /^[1-9][0-9]?$/,
-  "magicSkill": /^([1-4]?\d(\.\d\d?\d?)?|50(.00?0?)?)$/,
-  "mimicrySkill": /^([1-4]?\d(\.\d\d?\d?)?|50(.00?0?)?)$/,
-  "plusMP": /^-?(1?[0-9]|2[0-5])$/,
-  "mimicCastRate": /^([1-9]|1[0125])$/
+  "playerLevel": /^[1-9][0-9]?$/,                           // 1 to 99
+  "magicSkill": /^([1-4]?\d(\.\d\d?\d?)?|50(.00?0?)?)$/,    // 0.000 to 50.000
+  "mimicrySkill": /^([1-4]?\d(\.\d\d?\d?)?|50(.00?0?)?)$/,  // ditto
+  "plusMP": /^-?(1?[0-9]|2[0-5])$/,                         // -25 to 25
+  "mimicCastRate": /^([1-9]|1[0125])$/                      // 1 to 12, or 15
 };
 
+// Handles the offset between array indices and raw stat values,
+// due to stats not going lower than 3.
 const getManaBonus = function(statValue) {
   return adjMagMana[statValue - ADJ_MAG_MANA_OFFSET];
 }
 
+// Computes an level-dependent value relevant to MP computation.
 const getPlayerLevelsEff = function(level) {
   const tmpLev = level * 10;
   if (level <= 50) {
@@ -134,6 +143,7 @@ const getPlayerLevelsEff = function(level) {
   }
 }
 
+// Computes an class-and-stat-dependent value relevant to MP computation.
 const getWeightedBonus = function(manaPercents, abilityScores) {
   return manaPercents[DEX] * getManaBonus(abilityScores[DEX]) +
          manaPercents[INT] * getManaBonus(abilityScores[INT]) +
@@ -141,6 +151,7 @@ const getWeightedBonus = function(manaPercents, abilityScores) {
          manaPercents[CHA] * getManaBonus(abilityScores[CHA]);
 }
 
+// Performs the final steps of MP computation.
 const manaFromParameters = function(p, abilityScores, toMana, playerLevelsEff, manaPercents) {
   const weightedBonus = getWeightedBonus(manaPercents, abilityScores);
   const fromStats = Math.floor(weightedBonus * playerLevelsEff / p.manaPoolDivisor);
@@ -155,6 +166,9 @@ const manaFromParameters = function(p, abilityScores, toMana, playerLevelsEff, m
   return afterFloor;
 }
 
+// The top level of the process of recomputing MP
+// due to a change in character parameters, closely
+// following the logic laid out in the game source.
 const recompute = function(p) {
 
   const level = p.playerLevel;
@@ -193,6 +207,7 @@ const clearDisplay = function(container) {
   container.textContent = "";
 }
 
+// Wiring up outputs.
 const updateOutput = function() {
   
   const [playerManapoints, mimicryManapoints] = recompute(profile);
@@ -210,6 +225,7 @@ const updateOutput = function() {
 
 updateOutput();
 
+// Wiring up inputs.
 allInputs.addEventListener('change', e => {
   const changedFieldID = e.target.id;
   const changedFieldType = e.target.type;
